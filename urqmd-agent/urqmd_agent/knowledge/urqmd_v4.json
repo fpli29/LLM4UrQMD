@@ -1,0 +1,667 @@
+{
+  "meta": {
+    "urqmd_version": "4.0",
+    "generated": false,
+    "reviewed": true,
+    "date": "2026-09-16",
+    "description": "Human-reviewed initial snapshot of source-verified UrQMD 4.0 facts. Every entry cites the local source; nothing here was inferred by an LLM."
+  },
+  "options": {
+    "CTOption(15)": {
+      "kind": "CTOption",
+      "index": 15,
+      "default": 0,
+      "runtime_settable": true,
+      "physics_changing": true,
+      "intervention_role": "primary partial channel removal",
+      "description": "When set to 1, removes s-channel resonance formation for BOTH meson-baryon (process/iline 10) AND meson-meson (iline 11) channels, plus the resonant part of the meson-baryon total cross section. Decays are unaffected.",
+      "affected_channels": [
+        "MB resonance formation (iline 10)",
+        "MM resonance formation (iline 11)",
+        "resonant part of MB total cross section"
+      ],
+      "collateral_effects": [
+        "Also removes MM (iline 11) s-channel resonance formation",
+        "Reduces the resonant part of the MB total cross section, altering MB collision rates"
+      ],
+      "caveats": [
+        "PARTIAL intervention: NOT an MB-only switch",
+        "Does not touch decays"
+      ],
+      "source_refs": [
+        "anndec.f:52-64 (io=0 branch)",
+        "input.f:297-298 (default 0)"
+      ]
+    },
+    "CTOption(59)": {
+      "kind": "CTOption",
+      "index": 59,
+      "default": 1,
+      "runtime_settable": true,
+      "physics_changing": true,
+      "intervention_role": "negative control candidate (strangeness exchange)",
+      "description": "Gates the strangeness-exchange (STRX) channels iline 57-62. Values >= 2 additionally enable iline 63/64. The STRX cross sections are inside the meson-baryon total cross section.",
+      "affected_channels": [
+        "STRX iline 57-62",
+        "iline 63/64 when >= 2"
+      ],
+      "collateral_effects": [
+        "STRX cross sections are part of the MB total cross section, so removing them changes the MB total"
+      ],
+      "caveats": [
+        "Default is 1 (channels ON); setting 0 removes them"
+      ],
+      "source_refs": [
+        "make22.f:6132-6183 (gating)",
+        "make22.f:4750-4762 (STRX inside MB total)",
+        "input.f:383 (default)"
+      ]
+    },
+    "CTOption(18)": {
+      "kind": "CTOption",
+      "index": 18,
+      "default": 0,
+      "runtime_settable": true,
+      "physics_changing": true,
+      "intervention_role": "final-decay modification (timing/feed-down diagnostic)",
+      "description": "When set to 1, a forced final decay sweep of unstable particles runs after the last timestep with the Pauli blocker temporarily disabled. Transport before the final decay is unchanged.",
+      "affected_channels": [
+        "final-state decay sweep after the last timestep"
+      ],
+      "collateral_effects": [
+        "Changes feed-down from resonances that would otherwise survive at the time cutoff"
+      ],
+      "caveats": [
+        "FINAL-DECAY MODIFICATION, not a collision-channel intervention"
+      ],
+      "source_refs": [
+        "urqmd.f:351-386"
+      ]
+    },
+    "CTOption(62)": {
+      "kind": "CTOption",
+      "index": 62,
+      "default": 0,
+      "runtime_settable": true,
+      "physics_changing": false,
+      "intervention_role": "output-stage only",
+      "description": "Output-stage decay performed on a saved copy of the state; the dynamics are unchanged.",
+      "affected_channels": [],
+      "collateral_effects": [],
+      "caveats": [
+        "Affects only the written final state, not the transport"
+      ],
+      "source_refs": [
+        "urqmd.f:333-341",
+        "uhmerge.f"
+      ]
+    },
+    "CTOption(56)": {
+      "kind": "CTOption",
+      "index": 56,
+      "default": 0,
+      "runtime_settable": true,
+      "physics_changing": false,
+      "intervention_role": "output format",
+      "description": "When set to 1, file15 particle records carry unique lifetime particle IDs (uid) instead of slot indices. Required for history tracing.",
+      "affected_channels": [],
+      "collateral_effects": [],
+      "caveats": [],
+      "source_refs": [
+        "output.f:613-616"
+      ]
+    },
+    "CTOption(10)": {
+      "kind": "CTOption",
+      "index": 10,
+      "default": 0,
+      "runtime_settable": true,
+      "physics_changing": true,
+      "intervention_role": "none (misleading label)",
+      "description": "The label is misleading: CTOption(10)=1 DISABLES Pauli blocking.",
+      "affected_channels": [
+        "Pauli blocking (globally)"
+      ],
+      "collateral_effects": [
+        "Disabling Pauli blocking changes all fermionic collision acceptance"
+      ],
+      "caveats": [
+        "Do not trust the option label; semantics are source-verified"
+      ],
+      "source_refs": []
+    },
+    "tim": {
+      "kind": "input_keyword",
+      "default": "200 200",
+      "runtime_settable": true,
+      "physics_changing": true,
+      "intervention_role": "broad evolution-time truncation",
+      "description": "Purely temporal evolution stop. Undecayed resonances are force-decayed at the cutoff by default (via the CTOption(18)-like sweep). Acts identically on all channels: this is a BROAD temporal truncation, not a channel-specific intervention.",
+      "affected_channels": [
+        "all channels equally (temporal truncation)"
+      ],
+      "collateral_effects": [
+        "Force-decays resonances that would have decayed later",
+        "Truncates late-stage rescattering of every species"
+      ],
+      "caveats": [
+        "Cannot be used to remove a specific reaction channel"
+      ],
+      "source_refs": [
+        "urqmd.f:142",
+        "input.f:767-830"
+      ]
+    },
+    "f13_f14_f15_f16_f19_f20_keywords": {
+      "kind": "input_keyword",
+      "runtime_settable": true,
+      "physics_changing": false,
+      "intervention_role": "output control",
+      "description": "The f13/f14/f15/f16/f19/f20 input keywords SUPPRESS the corresponding output file. The environment variables ftnNN (e.g. ftn15) ENABLE the file. This inversion is a known trap.",
+      "affected_channels": [],
+      "collateral_effects": [],
+      "caveats": [
+        "Putting 'f15' in the input file turns history output OFF"
+      ],
+      "source_refs": [
+        "input.f"
+      ]
+    },
+    "dead_ctoptions": {
+      "kind": "catalog_note",
+      "description": "CTOptions 26, 43 and 66 are dead (parsed but never used). CTOption 51 does not exist. The options arrays have numcto=numctp=400 (options.f:3-12); cto/ctp pairs are parsed at input.f:780-794; indices > 68 are no-ops.",
+      "dead": [
+        26,
+        43,
+        66
+      ],
+      "nonexistent": [
+        51
+      ],
+      "no_op_above": 68,
+      "source_refs": [
+        "options.f:3-12",
+        "input.f:780-794"
+      ]
+    },
+    "collision_classes": {
+      "kind": "catalog_note",
+      "description": "MB = collision class 9, MM = class 10 in collclass.",
+      "source_refs": [
+        "scatter.f:1226-1234"
+      ]
+    }
+  },
+  "processes": {
+    "20": {
+      "class": "DECAY",
+      "description": "1->n decay",
+      "source_refs": [
+        "scatter.f:173",
+        "make22.f:705-749"
+      ],
+      "caveats": []
+    },
+    "10": {
+      "class": "MB",
+      "description": "meson-baryon s-channel resonance formation; cross sections via crossx",
+      "source_refs": [
+        "make22.f:4395-4404 (crossx)",
+        "make22.f:231-235 (final state)"
+      ],
+      "caveats": [
+        "removed when CTOption(15)=1"
+      ]
+    },
+    "11": {
+      "class": "MM",
+      "description": "meson-meson s-channel resonance formation",
+      "source_refs": [
+        "make22.f:4406-4409"
+      ],
+      "caveats": [
+        "removed when CTOption(15)=1"
+      ]
+    },
+    "27": {
+      "class": "MB_or_STRING",
+      "description": "splits by outgoing multiplicity: nout==1 -> anndec resonance fallback (MB); nout>1 -> MB->1 string (STRING); splits at CTParam(60)=3.0 GeV",
+      "source_refs": [
+        "make22.f:868-1014",
+        "make22.f:935-940",
+        "make22.f:942"
+      ],
+      "caveats": [
+        "class depends on nout; classify() handles this"
+      ]
+    },
+    "15": {
+      "class": "STRING",
+      "description": "XX -> 2 strings excitation/fragmentation",
+      "source_refs": [
+        "make22.f:345-679"
+      ],
+      "caveats": []
+    },
+    "24": {
+      "class": "STRING",
+      "description": "bbar-b diffractive string (-> label 15)",
+      "source_refs": [],
+      "caveats": []
+    },
+    "28": {
+      "class": "STRING",
+      "description": "MB -> 2 strings (-> label 15)",
+      "source_refs": [],
+      "caveats": []
+    },
+    "23": {
+      "class": "ANNIHILATION",
+      "description": "bbar-b annihilation -> 2 strings",
+      "source_refs": [
+        "make22.f:752-814"
+      ],
+      "caveats": []
+    },
+    "57": {
+      "class": "STRX",
+      "description": "K N -> Y pi",
+      "source_refs": [
+        "make22.f:6132-6138"
+      ],
+      "caveats": [
+        "requires CTOption(59)>=1 (default 1)"
+      ]
+    },
+    "58": {
+      "class": "STRX",
+      "description": "pi Y -> K N",
+      "source_refs": [
+        "make22.f:6142-6149"
+      ],
+      "caveats": [
+        "requires CTOption(59)>=1"
+      ]
+    },
+    "59": {
+      "class": "STRX",
+      "description": "K Y -> Xi pi",
+      "source_refs": [
+        "make22.f:6151-6157"
+      ],
+      "caveats": [
+        "requires CTOption(59)>=1"
+      ]
+    },
+    "60": {
+      "class": "STRX",
+      "description": "Xi pi -> Y K",
+      "source_refs": [
+        "make22.f:6159-6165"
+      ],
+      "caveats": [
+        "requires CTOption(59)>=1"
+      ]
+    },
+    "61": {
+      "class": "STRX",
+      "description": "Xi K -> Omega pi",
+      "source_refs": [
+        "make22.f:6167-6173"
+      ],
+      "caveats": [
+        "requires CTOption(59)>=1"
+      ]
+    },
+    "62": {
+      "class": "STRX",
+      "description": "Omega pi -> Xi K (inverse of 61)",
+      "source_refs": [],
+      "caveats": [
+        "requires CTOption(59)>=1"
+      ]
+    },
+    "13": {
+      "class": "ELASTIC",
+      "description": "generic AQM elastic + forced-elastic fallback",
+      "source_refs": [
+        "make22.f:4460-4486",
+        "scatter.f:262"
+      ],
+      "caveats": []
+    },
+    "17": {
+      "class": "ELASTIC",
+      "description": "pn elastic",
+      "source_refs": [],
+      "caveats": []
+    },
+    "19": {
+      "class": "ELASTIC",
+      "description": "pp/nn elastic",
+      "source_refs": [],
+      "caveats": []
+    },
+    "22": {
+      "class": "ELASTIC",
+      "description": "bbar-b elastic",
+      "source_refs": [],
+      "caveats": []
+    },
+    "26": {
+      "class": "ELASTIC",
+      "description": "MB elastic",
+      "source_refs": [],
+      "caveats": []
+    },
+    "38": {
+      "class": "ELASTIC",
+      "description": "MM elastic, constant 5 mb",
+      "source_refs": [],
+      "caveats": []
+    },
+    "1": {
+      "class": "BB",
+      "description": "NN -> N/Delta resonance production (class 1-8)",
+      "source_refs": [
+        "make22.f:4313 (label 1)"
+      ],
+      "caveats": []
+    },
+    "2": {
+      "class": "BB",
+      "description": "NN -> N/Delta resonance production (class 1-8)",
+      "source_refs": [
+        "make22.f:4313 (label 1)"
+      ],
+      "caveats": []
+    },
+    "3": {
+      "class": "BB",
+      "description": "NN -> N/Delta resonance production (class 1-8)",
+      "source_refs": [
+        "make22.f:4313 (label 1)"
+      ],
+      "caveats": []
+    },
+    "4": {
+      "class": "BB",
+      "description": "NN -> N/Delta resonance production (class 1-8)",
+      "source_refs": [
+        "make22.f:4313 (label 1)"
+      ],
+      "caveats": []
+    },
+    "5": {
+      "class": "BB",
+      "description": "NN -> N/Delta resonance production (class 1-8)",
+      "source_refs": [
+        "make22.f:4313 (label 1)"
+      ],
+      "caveats": []
+    },
+    "6": {
+      "class": "BB",
+      "description": "NN -> N/Delta resonance production (class 1-8)",
+      "source_refs": [
+        "make22.f:4313 (label 1)"
+      ],
+      "caveats": []
+    },
+    "7": {
+      "class": "BB",
+      "description": "NN -> N/Delta resonance production (class 1-8)",
+      "source_refs": [
+        "make22.f:4313 (label 1)"
+      ],
+      "caveats": []
+    },
+    "8": {
+      "class": "BB",
+      "description": "NN -> N/Delta resonance production (class 1-8)",
+      "source_refs": [
+        "make22.f:4313 (label 1)"
+      ],
+      "caveats": []
+    },
+    "14": {
+      "class": "BB",
+      "description": "AQM inelastic 2->2 resonance excitation",
+      "source_refs": [
+        "make22.f:4488-4514"
+      ],
+      "caveats": []
+    },
+    "35": {
+      "class": "BB",
+      "description": "N-Delta inelastic excitation",
+      "source_refs": [],
+      "caveats": []
+    },
+    "39": {
+      "class": "BB",
+      "description": "bbar-b inelastic (-> label 14)",
+      "source_refs": [],
+      "caveats": []
+    },
+    "30": {
+      "class": "BB",
+      "description": "parameterized detailed-balance absorption",
+      "source_refs": [
+        "make22.f:4935-4997"
+      ],
+      "caveats": []
+    },
+    "31": {
+      "class": "BB",
+      "description": "parameterized detailed-balance absorption",
+      "source_refs": [
+        "make22.f:4935-4997"
+      ],
+      "caveats": []
+    },
+    "32": {
+      "class": "BB",
+      "description": "parameterized detailed-balance absorption",
+      "source_refs": [
+        "make22.f:4935-4997"
+      ],
+      "caveats": []
+    },
+    "-2": {
+      "class": "BB",
+      "description": "detailed-balance B*B* -> NN via crossz",
+      "source_refs": [
+        "make22.f:4262",
+        "make22.f:4355"
+      ],
+      "caveats": []
+    },
+    "-3": {
+      "class": "BB",
+      "description": "detailed-balance B*B* -> NN via crossz",
+      "source_refs": [
+        "make22.f:4262",
+        "make22.f:4355"
+      ],
+      "caveats": []
+    },
+    "-5": {
+      "class": "BB",
+      "description": "detailed-balance B*B* -> NN via crossz",
+      "source_refs": [
+        "make22.f:4262",
+        "make22.f:4355"
+      ],
+      "caveats": []
+    },
+    "-6": {
+      "class": "BB",
+      "description": "detailed-balance B*B* -> NN via crossz",
+      "source_refs": [
+        "make22.f:4262",
+        "make22.f:4355"
+      ],
+      "caveats": []
+    },
+    "-7": {
+      "class": "BB",
+      "description": "detailed-balance B*B* -> NN via crossz",
+      "source_refs": [
+        "make22.f:4262",
+        "make22.f:4355"
+      ],
+      "caveats": []
+    }
+  },
+  "particles": {
+    "Lambda": {
+      "ityp": 41,
+      "iso3": 0,
+      "pdg": 3122,
+      "charge": 0,
+      "strit": 1,
+      "physical_strangeness": -1,
+      "kind": "baryon",
+      "resonance": false,
+      "family": "STRANGE_BARYON_GROUND"
+    },
+    "K0": {
+      "ityp": 106,
+      "iso3": -1,
+      "pdg": 311,
+      "charge": 0,
+      "strit": -1,
+      "physical_strangeness": 1,
+      "kind": "meson",
+      "resonance": false,
+      "family": "STRANGE_MESON_GROUND"
+    },
+    "antiK0": {
+      "ityp": -106,
+      "iso3": 1,
+      "pdg": -311,
+      "charge": 0,
+      "strit": 1,
+      "physical_strangeness": -1,
+      "kind": "meson",
+      "resonance": false,
+      "family": "STRANGE_MESON_GROUND"
+    }
+  },
+  "particle_notes": {
+    "strangeness_convention": "Physical strangeness S = -strit(ityp); strit counts strange quarks (blockres.f:1117). All history-layer comparisons use the raw strit convention consistently.",
+    "resonance_definition": "A particle is a resonance iff widit(ityp) > 0 (blockres.f:1173-1189; dectim.f:61).",
+    "source_refs": [
+      "blockres.f:1038-1062 (strit)",
+      "blockres.f:1117 (sign convention)",
+      "blockres.f:1173-1189 (widit)"
+    ]
+  },
+  "interventions": {
+    "CTOption(15)": {
+      "type": "CHANNEL REMOVAL",
+      "scope": "PARTIAL",
+      "role": "primary partial",
+      "runtime_or_source": "existing runtime option",
+      "default": 0,
+      "activation": "cto 15 1 in the input deck",
+      "removes": [
+        "MB s-channel resonance formation (iline 10)",
+        "MM s-channel resonance formation (iline 11)",
+        "resonant part of the MB total cross section"
+      ],
+      "affects_mb_resonance_formation": true,
+      "collateral_effects": [
+        "Also removes MM (iline 11) resonance formation",
+        "Alters the MB total cross section"
+      ],
+      "execution_enabled": false,
+      "status": "AVAILABLE_BUT_EXECUTION_DISABLED_IN_MVP",
+      "source_refs": [
+        "anndec.f:52-64",
+        "input.f:297-298"
+      ]
+    },
+    "CTOption(59)": {
+      "type": "CHANNEL REMOVAL",
+      "scope": "STRX channels only",
+      "role": "negative control candidate",
+      "runtime_or_source": "existing runtime option",
+      "default": 1,
+      "activation": "cto 59 0 in the input deck removes STRX iline 57-62",
+      "removes": [
+        "strangeness-exchange channels iline 57-62"
+      ],
+      "affects_mb_resonance_formation": false,
+      "collateral_effects": [
+        "STRX cross sections are inside the MB total cross section (make22.f:4750-4762)"
+      ],
+      "execution_enabled": false,
+      "status": "AVAILABLE_BUT_EXECUTION_DISABLED_IN_MVP",
+      "source_refs": [
+        "make22.f:6132-6183",
+        "make22.f:4750-4762"
+      ]
+    },
+    "tim": {
+      "type": "EVOLUTION-TIME TRUNCATION",
+      "scope": "broad (all channels)",
+      "role": "orthogonal (temporal)",
+      "runtime_or_source": "existing input keyword",
+      "default": "200 200",
+      "activation": "tim <t_main> <t_out> in the input deck",
+      "removes": [
+        "late-time evolution of every channel equally"
+      ],
+      "affects_mb_resonance_formation": false,
+      "collateral_effects": [
+        "force-decays undecayed resonances at the cutoff",
+        "truncates all late rescattering"
+      ],
+      "execution_enabled": false,
+      "status": "AVAILABLE_BUT_EXECUTION_DISABLED_IN_MVP",
+      "source_refs": [
+        "urqmd.f:142",
+        "input.f:767-830"
+      ]
+    },
+    "CTOption(18)": {
+      "type": "FINAL-DECAY MODIFICATION",
+      "scope": "final-state decay sweep only",
+      "role": "orthogonal (timing/feed-down diagnostic)",
+      "runtime_or_source": "existing runtime option",
+      "default": 0,
+      "activation": "cto 18 1 in the input deck",
+      "removes": [
+        "survival of unstable particles at the time cutoff (forces their decay with Pauli blocking disabled)"
+      ],
+      "affects_mb_resonance_formation": false,
+      "collateral_effects": [
+        "changes feed-down composition of final yields"
+      ],
+      "execution_enabled": false,
+      "status": "AVAILABLE_BUT_EXECUTION_DISABLED_IN_MVP",
+      "source_refs": [
+        "urqmd.f:351-386"
+      ]
+    },
+    "MB_ONLY_PATCH": {
+      "type": "CHANNEL REMOVAL",
+      "scope": "MB-only s-channel resonance formation (iline 10)",
+      "role": "confirmatory primary (Phase 1D)",
+      "runtime_or_source": "local source modification (CTOption(100) gate), runtime-controlled",
+      "status": "IMPLEMENTED_LOCAL_CONFIRMATORY",
+      "description": "CTOption(100) gates only the crossx io=10 branch (make22.f label 10) for MB-class pairs; default 0 is bit-for-bit baseline (OFF regression: 20/20 audit seeds byte-identical f13/f15 vs Phase-1B2). MB total sigma (channel 25) unchanged; normit redistributes. MM io=11 untouched (ON audit: io=10 count 0, io=11 present, f_pid11mother_K does not collapse). Local research modification only, never redistributed. Executable only as whitelisted condition 'mb_only' with authorization 'phase1d-confirmatory'.",
+      "affects_mb_resonance_formation": true,
+      "collateral_effects": [],
+      "execution_enabled": "whitelist-gated (mb_only, phase1d-confirmatory)",
+      "source_refs": [
+        "make22.f:4395-4418 (gated iline=10 branch)",
+        "input.f:405-406 (CTOption(100) default 0)",
+        "physics_gate/phase1d/phase1d_protocol.md",
+        "physics_gate/phase1d/patch_manifest.json"
+      ]
+    }
+  }
+}

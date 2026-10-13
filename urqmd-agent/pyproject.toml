@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "urqmd-agent"
+version = "0.1.0"
+description = "Deterministic tool layer and LLM skill for source-verified UrQMD 4.0 simulations"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.21"]
+
+[project.scripts]
+urqmd-agent = "urqmd_agent.cli.main:main"
+
+[tool.setuptools.packages.find]
+include = ["urqmd_agent*"]
+
+[tool.setuptools.package-data]
+urqmd_agent = ["knowledge/*.json", "skills/**/*.md"]

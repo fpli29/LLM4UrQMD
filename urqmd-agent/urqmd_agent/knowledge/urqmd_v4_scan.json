@@ -1,0 +1,684 @@
+{
+  "facts": {
+    "ctoption_default.1": {
+      "evidence": "input.f:269",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.10": {
+      "evidence": "input.f:287",
+      "value": 0,
+      "verdict": "verified"
+    },
+    "ctoption_default.11": {
+      "evidence": "input.f:289",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.12": {
+      "evidence": "input.f:291",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.13": {
+      "evidence": "input.f:293",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.14": {
+      "evidence": "input.f:295",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.15": {
+      "evidence": "input.f:297",
+      "value": 0,
+      "verdict": "verified"
+    },
+    "ctoption_default.16": {
+      "evidence": "input.f:299",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.17": {
+      "evidence": "input.f:301",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.18": {
+      "evidence": "input.f:303",
+      "value": 0,
+      "verdict": "verified"
+    },
+    "ctoption_default.19": {
+      "evidence": "input.f:305",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.2": {
+      "evidence": "input.f:271",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.20": {
+      "evidence": "input.f:307",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.21": {
+      "evidence": "input.f:309",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.22": {
+      "evidence": "input.f:311",
+      "value": 1,
+      "verdict": "unverified"
+    },
+    "ctoption_default.23": {
+      "evidence": "input.f:313",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.24": {
+      "evidence": "input.f:315",
+      "value": 1,
+      "verdict": "unverified"
+    },
+    "ctoption_default.25": {
+      "evidence": "input.f:317",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.26": {
+      "evidence": "input.f:319",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.27": {
+      "evidence": "input.f:321",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.28": {
+      "evidence": "input.f:323",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.29": {
+      "evidence": "input.f:325",
+      "value": 2,
+      "verdict": "unverified"
+    },
+    "ctoption_default.3": {
+      "evidence": "input.f:273",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.30": {
+      "evidence": "input.f:327",
+      "value": 1,
+      "verdict": "unverified"
+    },
+    "ctoption_default.31": {
+      "evidence": "input.f:329",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.32": {
+      "evidence": "input.f:331",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.33": {
+      "evidence": "input.f:333",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.34": {
+      "evidence": "input.f:335",
+      "value": 1,
+      "verdict": "unverified"
+    },
+    "ctoption_default.35": {
+      "evidence": "input.f:337",
+      "value": 1,
+      "verdict": "unverified"
+    },
+    "ctoption_default.36": {
+      "evidence": "input.f:339",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.37": {
+      "evidence": "input.f:341",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.38": {
+      "evidence": "input.f:343",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.39": {
+      "evidence": "input.f:345",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.4": {
+      "evidence": "input.f:275",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.40": {
+      "evidence": "input.f:347",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.41": {
+      "evidence": "input.f:349",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.42": {
+      "evidence": "input.f:351",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.43": {
+      "evidence": "input.f:353",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.44": {
+      "evidence": "input.f:355",
+      "value": 1,
+      "verdict": "unverified"
+    },
+    "ctoption_default.45": {
+      "evidence": "input.f:357",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.46": {
+      "evidence": "input.f:359",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.47": {
+      "evidence": "input.f:361",
+      "value": 5,
+      "verdict": "unverified"
+    },
+    "ctoption_default.48": {
+      "evidence": "input.f:363",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.49": {
+      "evidence": "input.f:365",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.5": {
+      "evidence": "input.f:277",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.50": {
+      "evidence": "input.f:367",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.52": {
+      "evidence": "input.f:369",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.53": {
+      "evidence": "input.f:371",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.54": {
+      "evidence": "input.f:373",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.55": {
+      "evidence": "input.f:375",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.56": {
+      "evidence": "input.f:377",
+      "value": 0,
+      "verdict": "verified"
+    },
+    "ctoption_default.57": {
+      "evidence": "input.f:379",
+      "value": 1,
+      "verdict": "unverified"
+    },
+    "ctoption_default.58": {
+      "evidence": "input.f:381",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.59": {
+      "evidence": "input.f:383",
+      "value": 1,
+      "verdict": "verified"
+    },
+    "ctoption_default.6": {
+      "evidence": "input.f:279",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.60": {
+      "evidence": "input.f:385",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.61": {
+      "evidence": "input.f:387",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.62": {
+      "evidence": "input.f:389",
+      "value": 0,
+      "verdict": "verified"
+    },
+    "ctoption_default.63": {
+      "evidence": "input.f:391",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.64": {
+      "evidence": "input.f:395",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.65": {
+      "evidence": "input.f:397",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.66": {
+      "evidence": "input.f:399",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.67": {
+      "evidence": "input.f:401",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.68": {
+      "evidence": "input.f:403",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.7": {
+      "evidence": "input.f:281",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.8": {
+      "evidence": "input.f:283",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_default.9": {
+      "evidence": "input.f:285",
+      "value": 0,
+      "verdict": "unverified"
+    },
+    "ctoption_label.1": {
+      "evidence": "input.f:270",
+      "value": "resonance widths are mass dependent",
+      "verdict": "unverified"
+    },
+    "ctoption_label.10": {
+      "evidence": "input.f:288",
+      "value": "enable Pauli Blocker",
+      "verdict": "unverified"
+    },
+    "ctoption_label.11": {
+      "evidence": "input.f:290",
+      "value": "mass reduction for cascade initialisation",
+      "verdict": "unverified"
+    },
+    "ctoption_label.12": {
+      "evidence": "input.f:292",
+      "value": "string condition =0 (.ne.0 no strings)",
+      "verdict": "unverified"
+    },
+    "ctoption_label.13": {
+      "evidence": "input.f:294",
+      "value": "enhanced file16 output",
+      "verdict": "unverified"
+    },
+    "ctoption_label.14": {
+      "evidence": "input.f:296",
+      "value": "cos(the) is distributet between -1..1",
+      "verdict": "unverified"
+    },
+    "ctoption_label.15": {
+      "evidence": "input.f:298",
+      "value": "allow mm&mb-scattering",
+      "verdict": "unverified"
+    },
+    "ctoption_label.16": {
+      "evidence": "input.f:300",
+      "value": "propagate without collisions",
+      "verdict": "unverified"
+    },
+    "ctoption_label.17": {
+      "evidence": "input.f:302",
+      "value": "colload after every timestep",
+      "verdict": "unverified"
+    },
+    "ctoption_label.18": {
+      "evidence": "input.f:304",
+      "value": "final decay of unstable particles",
+      "verdict": "unverified"
+    },
+    "ctoption_label.19": {
+      "evidence": "input.f:306",
+      "value": "allow bbar annihilaion",
+      "verdict": "unverified"
+    },
+    "ctoption_label.2": {
+      "evidence": "input.f:272",
+      "value": "conservation of scattering plane",
+      "verdict": "unverified"
+    },
+    "ctoption_label.20": {
+      "evidence": "input.f:308",
+      "value": "dont generate e+e- instead of bbar",
+      "verdict": "unverified"
+    },
+    "ctoption_label.21": {
+      "evidence": "input.f:310",
+      "value": "use field feynman frgm. function",
+      "verdict": "unverified"
+    },
+    "ctoption_label.22": {
+      "evidence": "input.f:312",
+      "value": "use lund excitation function",
+      "verdict": "unverified"
+    },
+    "ctoption_label.23": {
+      "evidence": "input.f:314",
+      "value": "lorentz contraction of projectile & targed",
+      "verdict": "unverified"
+    },
+    "ctoption_label.24": {
+      "evidence": "input.f:316",
+      "value": "Wood-Saxon initialization",
+      "verdict": "unverified"
+    },
+    "ctoption_label.25": {
+      "evidence": "input.f:318",
+      "value": "phase space corrections for resonance mass",
+      "verdict": "unverified"
+    },
+    "ctoption_label.26": {
+      "evidence": "input.f:320",
+      "value": "use z -> 1-z for diquark-pairs",
+      "verdict": "unverified"
+    },
+    "ctoption_label.27": {
+      "evidence": "input.f:322",
+      "value": "reference frame (1=target, 2=projectile, else=cms)",
+      "verdict": "unverified"
+    },
+    "ctoption_label.28": {
+      "evidence": "input.f:324",
+      "value": "propagate spectators also",
+      "verdict": "unverified"
+    },
+    "ctoption_label.29": {
+      "evidence": "input.f:326",
+      "value": "no transverse momentum in clustr",
+      "verdict": "unverified"
+    },
+    "ctoption_label.3": {
+      "evidence": "input.f:274",
+      "value": "use modified detailed balance",
+      "verdict": "unverified"
+    },
+    "ctoption_label.30": {
+      "evidence": "input.f:328",
+      "value": "frozen fermi motion",
+      "verdict": "unverified"
+    },
+    "ctoption_label.31": {
+      "evidence": "input.f:330",
+      "value": "reduced mass spectrum in string",
+      "verdict": "unverified"
+    },
+    "ctoption_label.32": {
+      "evidence": "input.f:332",
+      "value": "masses are distributed acc. to m-dep. widths",
+      "verdict": "unverified"
+    },
+    "ctoption_label.33": {
+      "evidence": "input.f:334",
+      "value": "use tables & m-dep. for pmean in fprwdt & fwidth",
+      "verdict": "unverified"
+    },
+    "ctoption_label.34": {
+      "evidence": "input.f:336",
+      "value": "lifetme according to m-dep. width",
+      "verdict": "unverified"
+    },
+    "ctoption_label.35": {
+      "evidence": "input.f:338",
+      "value": "generate high precision tables",
+      "verdict": "unverified"
+    },
+    "ctoption_label.36": {
+      "evidence": "input.f:340",
+      "value": "normalize Breit-Wigners with m.dep. widths",
+      "verdict": "unverified"
+    },
+    "ctoption_label.37": {
+      "evidence": "input.f:342",
+      "value": "heavy quarks form di-quark clusters",
+      "verdict": "unverified"
+    },
+    "ctoption_label.38": {
+      "evidence": "input.f:344",
+      "value": "scale p-pbar to b-bbar with equal p_lab",
+      "verdict": "unverified"
+    },
+    "ctoption_label.39": {
+      "evidence": "input.f:346",
+      "value": "dont call pauliblocker",
+      "verdict": "unverified"
+    },
+    "ctoption_label.4": {
+      "evidence": "input.f:276",
+      "value": "no initial conf. output",
+      "verdict": "unverified"
+    },
+    "ctoption_label.40": {
+      "evidence": "input.f:348",
+      "value": "read old fort.14 file",
+      "verdict": "unverified"
+    },
+    "ctoption_label.41": {
+      "evidence": "input.f:350",
+      "value": "generate extended output for cto40",
+      "verdict": "unverified"
+    },
+    "ctoption_label.42": {
+      "evidence": "input.f:352",
+      "value": "hadrons now have color fluctuations",
+      "verdict": "unverified"
+    },
+    "ctoption_label.44": {
+      "evidence": "input.f:356",
+      "value": "call PYTHIA for hard scatterings",
+      "verdict": "unverified"
+    },
+    "ctoption_label.45": {
+      "evidence": "input.f:358",
+      "value": "hydro mode",
+      "verdict": "unverified"
+    },
+    "ctoption_label.46": {
+      "evidence": "input.f:360",
+      "value": "calculate quark density instead of baryon density",
+      "verdict": "unverified"
+    },
+    "ctoption_label.47": {
+      "evidence": "input.f:362",
+      "value": "flag for equation of state for hydro",
+      "verdict": "unverified"
+    },
+    "ctoption_label.48": {
+      "evidence": "input.f:364",
+      "value": "propagate only N timesteps of hydro evolution",
+      "verdict": "unverified"
+    },
+    "ctoption_label.49": {
+      "evidence": "input.f:366",
+      "value": "propagate also spectators with hydrodynamics",
+      "verdict": "unverified"
+    },
+    "ctoption_label.5": {
+      "evidence": "input.f:278",
+      "value": "fixed impact parameter",
+      "verdict": "unverified"
+    },
+    "ctoption_label.50": {
+      "evidence": "input.f:368",
+      "value": "(additional) f14/f19 output after hydro phase",
+      "verdict": "unverified"
+    },
+    "ctoption_label.52": {
+      "evidence": "input.f:370",
+      "value": "Freezeout procedure changed",
+      "verdict": "unverified"
+    },
+    "ctoption_label.53": {
+      "evidence": "input.f:372",
+      "value": "efficient momentum generation in Cooperfrye",
+      "verdict": "unverified"
+    },
+    "ctoption_label.54": {
+      "evidence": "input.f:374",
+      "value": "OSCAR-Output during hydro evolution",
+      "verdict": "unverified"
+    },
+    "ctoption_label.55": {
+      "evidence": "input.f:376",
+      "value": "f19 output adjusted for visualization",
+      "verdict": "unverified"
+    },
+    "ctoption_label.56": {
+      "evidence": "input.f:378",
+      "value": "f15 output has unique particle id",
+      "verdict": "unverified"
+    },
+    "ctoption_label.57": {
+      "evidence": "input.f:380",
+      "value": "legacy event header w/ missing cto and ctp",
+      "verdict": "unverified"
+    },
+    "ctoption_label.58": {
+      "evidence": "input.f:382",
+      "value": "standard event header in collision file (file15)",
+      "verdict": "unverified"
+    },
+    "ctoption_label.59": {
+      "evidence": "input.f:384",
+      "value": "activate Baryon-Baryon strangeness exchange",
+      "verdict": "unverified"
+    },
+    "ctoption_label.6": {
+      "evidence": "input.f:280",
+      "value": "no first collisions inside proj/target",
+      "verdict": "unverified"
+    },
+    "ctoption_label.60": {
+      "evidence": "input.f:386",
+      "value": "use a 20 perc isotropic x-section in inelast coll",
+      "verdict": "unverified"
+    },
+    "ctoption_label.61": {
+      "evidence": "input.f:388",
+      "value": "no inelastic N+N scattering",
+      "verdict": "unverified"
+    },
+    "ctoption_label.62": {
+      "evidence": "input.f:390",
+      "value": "perform resonance decays before each output step",
+      "verdict": "unverified"
+    },
+    "ctoption_label.63": {
+      "evidence": "input.f:392",
+      "value": "Use tabulated CMF EoS for QMD evolution,>2=mom dep",
+      "verdict": "unverified"
+    },
+    "ctoption_label.64": {
+      "evidence": "input.f:396",
+      "value": "output nuclei from coalesence in f13 and OSCAR out",
+      "verdict": "unverified"
+    },
+    "ctoption_label.65": {
+      "evidence": "input.f:398",
+      "value": "Use parametrized EoS for QMD evolution",
+      "verdict": "unverified"
+    },
+    "ctoption_label.66": {
+      "evidence": "input.f:400",
+      "value": "Include mesons in Coulomb potentials",
+      "verdict": "unverified"
+    },
+    "ctoption_label.67": {
+      "evidence": "input.f:402",
+      "value": "Energy cut for counting participants in elastic",
+      "verdict": "unverified"
+    },
+    "ctoption_label.7": {
+      "evidence": "input.f:282",
+      "value": "elastic cross section enabled (<>0:total=inelast)",
+      "verdict": "unverified"
+    },
+    "ctoption_label.8": {
+      "evidence": "input.f:284",
+      "value": "extrapolate branching ratios",
+      "verdict": "unverified"
+    },
+    "ctoption_label.9": {
+      "evidence": "input.f:286",
+      "value": "use tabulated pp cross sections",
+      "verdict": "unverified"
+    },
+    "iline_dispatch_count": {
+      "evidence": "make22.f:4301",
+      "value": 64,
+      "verdict": "unverified"
+    },
+    "numcto": {
+      "evidence": "options.f:4",
+      "value": 400,
+      "verdict": "unverified"
+    },
+    "numctp": {
+      "evidence": "options.f:5",
+      "value": 400,
+      "verdict": "unverified"
+    }
+  },
+  "meta": {
+    "date": "2026-09-16",
+    "generated": true,
+    "generator": "build-knowledge"
+  }
+}
